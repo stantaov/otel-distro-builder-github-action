@@ -18,7 +18,7 @@ exporters:
   - gomod: go.opentelemetry.io/collector/exporter/otlphttpexporter v0.128.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter v0.128.0
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/googlecloudstorageexporter v1.79.0
-  - gomod: github.com/observiq/bindplane-otel-collector/exporter/kafkaexporter v0.128.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter v0.128.0
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.128.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension v0.128.0
