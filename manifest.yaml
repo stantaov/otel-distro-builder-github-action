@@ -11,6 +11,7 @@ receivers:
   - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.146.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver v0.146.0
   - gomod: github.com/observiq/bindplane-otel-collector/receiver/telemetrygeneratorreceiver v1.94.2
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver v0.146.0
 exporters:
   - gomod: go.opentelemetry.io/collector/exporter/debugexporter v0.146.0
   - gomod: go.opentelemetry.io/collector/exporter/nopexporter v0.146.0
@@ -18,6 +19,9 @@ exporters:
   - gomod: go.opentelemetry.io/collector/exporter/otlphttpexporter v0.146.0
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/googlecloudstorageexporter v1.94.2
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter v0.146.0
+  - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleexporter v1.94.2
+  - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.146.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension v0.146.0
