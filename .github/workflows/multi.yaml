@@ -38,6 +38,7 @@ jobs:
       - name: Build and Package
         uses: observiq/otel-distro-builder@v1.1.0
         with:
+          manifest: "./manifest.yaml"
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
       # Upload platform-specific artifacts with a unique name
