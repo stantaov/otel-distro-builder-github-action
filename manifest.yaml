@@ -1,6 +1,6 @@
 dist:
-  module: github.com/stantaov/otel-distro-builder
-  name: otel-distro-builder
+  module: github.com/stantaov/otel-custom-agent
+  name: otel-custom-agent
   description: Custom-built OpenTelemetry Collector.
   output_path: ./_build
   version: v0.0.1
