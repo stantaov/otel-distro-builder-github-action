@@ -1,6 +1,6 @@
 dist:
-  module: github.com/stantaov/otel-distro-builder-github-action
-  name: otel-distro-builder-github-action
+  module: github.com/stantaov/otel-distro-builder
+  name: otel-distro-builder
   description: Custom-built OpenTelemetry Collector.
   output_path: ./_build
   version: v0.0.1
