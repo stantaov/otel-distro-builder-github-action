@@ -1,0 +1,31 @@
+version: 2
+
+builds:
+  - id: otel-distro-builder
+    binary: otel-distro-builder-github-action
+    main: ./cmd/main.go
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+nfpms:
+  - id: default
+    package_name: otel-distro-builder-github-action
+    maintainer: "ObservIQ <support@observiq.com>"
+    formats:
+      - deb
+      - rpm
+      - apk
+    contents:
+      - src: ./
+        dst: /opt/otel-distro/
+
+archives:
+  - format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
