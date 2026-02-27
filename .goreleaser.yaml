@@ -16,13 +16,24 @@ nfpms:
   - id: default
     package_name: otel-distro-builder-github-action
     maintainer: "ObservIQ <support@observiq.com>"
+    homepage: "https://github.com/observiq/otel-distro-builder"
+    license: "Apache 2.0"
+    
+    file_name_template: "{{ .PackageName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    
+    contents:
+      - src: ./
+        dst: /opt/otel-distro/
+        type: dir
+        file_info:
+          owner: root
+          group: root  
+          mode: 0755
+    
     formats:
       - deb
       - rpm
       - apk
-    contents:
-      - src: ./
-        dst: /opt/otel-distro/
 
 archives:
   - format: tar.gz
