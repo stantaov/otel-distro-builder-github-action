@@ -22,6 +22,7 @@ exporters:
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleexporter v1.94.2
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter v0.146.0
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.146.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension v0.146.0
