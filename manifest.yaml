@@ -3,7 +3,7 @@ dist:
   name: otel-custom-agent
   description: Custom-built OpenTelemetry Collector.
   output_path: ./_build
-  version: v0.0.1
+  version: v0.0.2
 conf_resolver:
   default_uri_scheme: "env"
 receivers:
