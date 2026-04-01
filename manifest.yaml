@@ -3,7 +3,7 @@ dist:
   name: otel-custom-agent
   description: Custom-built OpenTelemetry Collector.
   output_path: ./_build
-  version: v0.0.2
+  version: v0.0.6
 conf_resolver:
   default_uri_scheme: "env"
 receivers:
@@ -22,7 +22,7 @@ exporters:
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleexporter v1.94.2
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
-  - gomod: github.com/stantaov/googlecloudpubsubexporter v0.146.1
+  - gomod: github.com/stantaov/googlecloudpubsubexporter v0.146.2
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.146.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension v0.146.0
@@ -115,4 +115,4 @@ replaces:
   - github.com/observiq/bindplane-otel-collector/internal/version => github.com/observiq/bindplane-otel-collector/internal/version v0.0.0-20250306153219-6fe3f849c29f
   # Fork of googlecloudpubsubexporter with "none" compression support
   # Maps the original otel-contrib import path used internally by other components to our fork
-  - github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter => github.com/stantaov/googlecloudpubsubexporter v0.146.1
+  - github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter => github.com/stantaov/googlecloudpubsubexporter v0.146.2
