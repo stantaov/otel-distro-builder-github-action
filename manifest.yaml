@@ -23,7 +23,7 @@ exporters:
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
   - gomod: github.com/stantaov/googlecloudpubsubexporter v0.146.2
-  - gomod: github.com/stantaov/parquet-gcs-exporter v0.2.2
+  - gomod: github.com/stantaov/parquet-gcs-exporter v0.2.4
     name: parquetgcsexporter
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.146.0
