@@ -3,7 +3,7 @@ dist:
   name: otel-custom-agent
   description: Custom-built OpenTelemetry Collector.
   output_path: ./_build
-  version: v0.0.9
+  version: v0.0.10
 conf_resolver:
   default_uri_scheme: "env"
 receivers:
@@ -23,7 +23,7 @@ exporters:
   - gomod: github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
   - gomod: github.com/stantaov/googlecloudpubsubexporter v0.146.2
-  - gomod: github.com/stantaov/parquet-gcs-exporter v0.2.4
+  - gomod: github.com/stantaov/parquet-gcs-exporter v0.2.5
     name: parquetgcsexporter
 extensions:
   - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.146.0
