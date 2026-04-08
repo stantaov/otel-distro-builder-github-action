@@ -20,7 +20,7 @@ func main() {
 	info := component.BuildInfo{
 		Command:     "otel-custom-agent",
 		Description: "Custom-built OpenTelemetry Collector.",
-		Version:     "v0.0.1",
+		Version:     "v0.0.10",
 	}
 
 	set := otelcol.CollectorSettings{

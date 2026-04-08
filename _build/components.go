@@ -30,7 +30,8 @@ import (
 	chronicleexporter "github.com/observiq/bindplane-otel-collector/exporter/chronicleexporter"
 	chronicleforwarderexporter "github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter"
 	fileexporter "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter"
-	googlecloudpubsubexporter "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter"
+	googlecloudpubsubexporter "github.com/stantaov/googlecloudpubsubexporter"
+	parquetgcsexporter "github.com/stantaov/parquet-gcs-exporter"
 	zpagesextension "go.opentelemetry.io/collector/extension/zpagesextension"
 	ackextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension"
 	asapauthextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/asapauthextension"
@@ -39,6 +40,7 @@ import (
 	bearertokenauthextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension"
 	jaegerencodingextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jaegerencodingextension"
 	otlpencodingextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/otlpencodingextension"
+	jsonlogencodingextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jsonlogencodingextension"
 	zipkinencodingextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/zipkinencodingextension"
 	headerssetterextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/headerssetterextension"
 	healthcheckextension "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension"
@@ -126,6 +128,7 @@ func components() (otelcol.Factories, error) {
 		bearertokenauthextension.NewFactory(),
 		jaegerencodingextension.NewFactory(),
 		otlpencodingextension.NewFactory(),
+		jsonlogencodingextension.NewFactory(),
 		zipkinencodingextension.NewFactory(),
 		headerssetterextension.NewFactory(),
 		healthcheckextension.NewFactory(),
@@ -155,6 +158,7 @@ func components() (otelcol.Factories, error) {
 		bearertokenauthextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension v0.146.0",
 		jaegerencodingextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jaegerencodingextension v0.146.0",
 		otlpencodingextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/otlpencodingextension v0.146.0",
+		jsonlogencodingextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jsonlogencodingextension v0.146.0",
 		zipkinencodingextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/zipkinencodingextension v0.146.0",
 		headerssetterextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/headerssetterextension v0.146.0",
 		healthcheckextension.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension v0.146.0",
@@ -202,6 +206,7 @@ func components() (otelcol.Factories, error) {
 		chronicleforwarderexporter.NewFactory(),
 		fileexporter.NewFactory(),
 		googlecloudpubsubexporter.NewFactory(),
+		parquetgcsexporter.NewFactory(),
 	)
 	if err != nil {
 		return otelcol.Factories{}, err
@@ -216,7 +221,8 @@ func components() (otelcol.Factories, error) {
 		chronicleexporter.NewFactory().Type(): "github.com/observiq/bindplane-otel-collector/exporter/chronicleexporter v1.94.2",
 		chronicleforwarderexporter.NewFactory().Type(): "github.com/observiq/bindplane-otel-collector/exporter/chronicleforwarderexporter v1.94.2",
 		fileexporter.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0",
-		googlecloudpubsubexporter.NewFactory().Type(): "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter v0.146.0",
+		googlecloudpubsubexporter.NewFactory().Type(): "github.com/stantaov/googlecloudpubsubexporter v0.146.2",
+		parquetgcsexporter.NewFactory().Type(): "github.com/stantaov/parquet-gcs-exporter v0.2.5",
 	})
 
 	factories.Processors, err = otelcol.MakeFactoryMap[processor.Factory](

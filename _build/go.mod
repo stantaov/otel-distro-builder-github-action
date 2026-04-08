@@ -33,7 +33,6 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/connector/servicegraphconnector v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.146.0
-	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/asapauthextension v0.146.0
@@ -41,6 +40,7 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jaegerencodingextension v0.146.0
+	github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jsonlogencodingextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/otlpencodingextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/zipkinencodingextension v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/headerssetterextension v0.146.0
@@ -79,6 +79,8 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/processor/unrollprocessor v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver v0.146.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver v0.146.0
+	github.com/stantaov/googlecloudpubsubexporter v0.146.2
+	github.com/stantaov/parquet-gcs-exporter v0.2.5
 	go.opentelemetry.io/collector/component v1.52.0
 	go.opentelemetry.io/collector/confmap v1.52.0
 	go.opentelemetry.io/collector/confmap/provider/envprovider v1.52.0
@@ -153,6 +155,7 @@ require (
 	github.com/SermoDigital/jose v0.9.2-0.20180104203859-803625baeddc // indirect
 	github.com/Showmax/go-fqdn v1.0.0 // indirect
 	github.com/alecthomas/participle/v2 v2.1.4 // indirect
+	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/antchfx/xmlquery v1.5.0 // indirect
 	github.com/antchfx/xpath v1.3.5 // indirect
 	github.com/antonmedv/expr v1.15.5 // indirect
@@ -275,6 +278,7 @@ require (
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/michel-laterman/proxy-connect-dialer-go v0.1.0 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
@@ -293,6 +297,7 @@ require (
 	github.com/observiq/bindplane-otel-collector/internal/report v1.94.2 // indirect
 	github.com/observiq/bindplane-otel-collector/receiver/routereceiver v1.94.2 // indirect
 	github.com/oklog/ulid/v2 v2.1.1 // indirect
+	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/open-telemetry/opamp-go v0.22.0 // indirect
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding v0.146.0 // indirect
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer v0.146.0 // indirect
@@ -330,6 +335,7 @@ require (
 	github.com/openshift/client-go v0.0.0-20251015124057-db0dee36e235 // indirect
 	github.com/openzipkin/zipkin-go v0.4.3 // indirect
 	github.com/outcaste-io/ristretto v0.2.3 // indirect
+	github.com/parquet-go/parquet-go v0.24.0 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/philhofer/fwd v1.2.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.25 // indirect
@@ -345,6 +351,7 @@ require (
 	github.com/prometheus/procfs v0.19.2 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20250401214520-65e299d6c5c9 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
+	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/scaleway/scaleway-sdk-go v1.0.0-beta.36 // indirect
 	github.com/secure-systems-lab/go-securesystemslib v0.9.0 // indirect
@@ -510,4 +517,4 @@ replace github.com/openshift/api => github.com/openshift/api v0.0.0-202307261628
 
 replace github.com/observiq/bindplane-otel-collector/internal/version => github.com/observiq/bindplane-otel-collector/internal/version v0.0.0-20250306153219-6fe3f849c29f
 
-replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter => /home/stan/googlecloudpubsubexporter
+replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter => github.com/stantaov/googlecloudpubsubexporter v0.146.2
