@@ -73,6 +73,9 @@ jobs:
           BODY="${BODY//BP_CURRENT/${{ steps.versions.outputs.bp_current }}}"
           BODY="${BODY//BP_LATEST/${{ steps.versions.outputs.bp_latest }}}"
 
+          # Ensure the label exists
+          gh label create "dependencies" --description "Dependency updates" --color "0075ca" 2>/dev/null || true
+
           # Close any existing update issue to avoid duplicates
           EXISTING=$(gh issue list --search "Component updates available" --state open --json number -q '.[0].number' 2>/dev/null || echo "")
           if [ -n "$EXISTING" ]; then
